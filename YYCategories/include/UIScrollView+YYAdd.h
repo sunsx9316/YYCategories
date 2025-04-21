@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/UIKit/UIScrollView+YYAdd.h
+../UIKit/UIScrollView+YYAdd.h

@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/UIKit/UIImage+YYAdd.h
+../UIKit/UIImage+YYAdd.h

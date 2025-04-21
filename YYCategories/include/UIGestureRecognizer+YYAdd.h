@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/UIKit/UIGestureRecognizer+YYAdd.h
+../UIKit/UIGestureRecognizer+YYAdd.h

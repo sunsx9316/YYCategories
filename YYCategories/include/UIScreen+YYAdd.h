@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/UIKit/UIScreen+YYAdd.h
+../UIKit/UIScreen+YYAdd.h

@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/UIKit/UIBarButtonItem+YYAdd.h
+../UIKit/UIBarButtonItem+YYAdd.h

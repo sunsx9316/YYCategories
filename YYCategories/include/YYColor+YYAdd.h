@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/Foundation/YYColor+YYAdd.h
+../Foundation/YYColor+YYAdd.h

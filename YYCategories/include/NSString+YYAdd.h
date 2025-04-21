@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/Foundation/NSString+YYAdd.h
+../Foundation/NSString+YYAdd.h

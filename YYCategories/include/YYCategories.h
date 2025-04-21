@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/YYCategories.h
+../YYCategories.h

@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/YYCategoriesMacro.h
+../YYCategoriesMacro.h

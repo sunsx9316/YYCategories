@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/Quartz/YYCGUtilities.h
+../Quartz/YYCGUtilities.h

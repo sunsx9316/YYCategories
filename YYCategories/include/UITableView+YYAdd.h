@@ -1,1 +1,1 @@
-/Users/jimhuang/Dev/YYCategories/YYCategories/UIKit/UITableView+YYAdd.h
+../UIKit/UITableView+YYAdd.h
