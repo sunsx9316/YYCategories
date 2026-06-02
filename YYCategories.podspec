@@ -1,13 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = 'YYCategories'
   s.summary      = 'A manager to get iOS keyboard views, frames and transform.'
-  s.version      = '1.0.4'
+  s.version      = '1.0.5'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'ibireme' => 'ibireme@gmail.com' }
   s.social_media_url = 'http://blog.ibireme.com'
   s.homepage     = 'https://github.com/ibireme/YYCategories'
   s.platform     = :ios, '6.0'
   s.ios.deployment_target = '6.0'
+  s.tvos.deployment_target = '12.0'
   s.source       = { :git => 'https://github.com/ibireme/YYCategories.git', :tag => s.version.to_s }
   
   s.requires_arc = true
@@ -16,6 +17,7 @@ Pod::Spec.new do |s|
   
   non_arc_files = 'YYCategories/Foundation/NSObject+YYAddForARC.{h,m}', 'YYCategories/Foundation/NSThread+YYAdd.{h,m}'
   s.ios.exclude_files = non_arc_files
+  s.tvos.exclude_files = non_arc_files + ['YYCategories/UIKit/UIBarButtonItem+YYAdd.{h,m}']
   s.subspec 'no-arc' do |sna|
     sna.requires_arc = false
     sna.source_files = non_arc_files

@@ -31,22 +31,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Returns the bounds of the screen for the current device orientation.
- 
+
  @return A rect indicating the bounds of the screen.
  @see    boundsForOrientation:
  */
-- (CGRect)currentBounds NS_EXTENSION_UNAVAILABLE_IOS("");
+- (CGRect)currentBounds
+#if TARGET_OS_TV
+__attribute__((unavailable("Not available on tvOS")));
+#else
+NS_EXTENSION_UNAVAILABLE_IOS("");
+#endif
 
 /**
  Returns the bounds of the screen for a given device orientation.
  `UIScreen`'s `bounds` method always returns the bounds of the
  screen of it in the portrait orientation.
- 
+
  @param orientation  The orientation to get the screen's bounds.
  @return A rect indicating the bounds of the screen.
  @see  currentBounds
  */
-- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation;
+- (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation
+#if TARGET_OS_TV
+__attribute__((unavailable("Not available on tvOS")));
+#else
+NS_EXTENSION_UNAVAILABLE_IOS("");
+#endif
 
 /**
  The screen's real size in pixel (width is always smaller than height).

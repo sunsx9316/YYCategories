@@ -34,7 +34,9 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #if TARGET_OS_IPHONE
 #import <YYCategories/UIImage+YYAdd.h>
 #import <YYCategories/UIControl+YYAdd.h>
+#if !TARGET_OS_TV
 #import <YYCategories/UIBarButtonItem+YYAdd.h>
+#endif
 #import <YYCategories/UIGestureRecognizer+YYAdd.h>
 #import <YYCategories/UIView+YYAdd.h>
 #import <YYCategories/UIScrollView+YYAdd.h>
@@ -71,7 +73,9 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #if TARGET_OS_IPHONE
 #import "UIImage+YYAdd.h"
 #import "UIControl+YYAdd.h"
+#if !TARGET_OS_TV
 #import "UIBarButtonItem+YYAdd.h"
+#endif
 #import "UIGestureRecognizer+YYAdd.h"
 #import "UIView+YYAdd.h"
 #import "UIScrollView+YYAdd.h"

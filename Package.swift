@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "YYCategories",
-    platforms: [.macOS(.v10_13), .iOS(.v12)],
+    platforms: [.macOS(.v10_13), .iOS(.v12), .tvOS(.v12)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -19,13 +19,13 @@ let package = Package(
             exclude: ["Foundation/NSObject+YYAddForARC.m", "Foundation/NSThread+YYAdd.m"],
             publicHeadersPath: "include",
             cSettings: [
-                .headerSearchPath("Foundation", .when(platforms: [.iOS, .macOS])),
-                .headerSearchPath("Quartz", .when(platforms: [.iOS])),
-                .headerSearchPath("UIKit", .when(platforms: [.iOS])),
+                .headerSearchPath("Foundation", .when(platforms: [.iOS, .macOS, .tvOS])),
+                .headerSearchPath("Quartz", .when(platforms: [.iOS, .tvOS])),
+                .headerSearchPath("UIKit", .when(platforms: [.iOS, .tvOS])),
                 .headerSearchPath("."),
             ],
             linkerSettings: [
-                .linkedFramework("UIKit", .when(platforms: [.iOS])),
+                .linkedFramework("UIKit", .when(platforms: [.iOS, .tvOS])),
                 .linkedFramework("Cocoa", .when(platforms: [.macOS])),
                 .linkedFramework("CoreFoundation"),
                 .linkedFramework("QuartzCore"),

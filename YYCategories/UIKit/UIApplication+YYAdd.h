@@ -66,16 +66,26 @@ NS_ASSUME_NONNULL_BEGIN
  
  This method is thread safe.
  */
-- (void)incrementNetworkActivityCount;
+- (void)incrementNetworkActivityCount
+#if TARGET_OS_TV
+__attribute__((unavailable("Not available on tvOS")));
+#else
+;
+#endif
 
 /**
- Decrements the number of active network requests. 
- If this number becomes zero after decrementing, this will stop animating the 
+ Decrements the number of active network requests.
+ If this number becomes zero after decrementing, this will stop animating the
  status bar network activity indicator.
- 
+
  This method is thread safe.
  */
-- (void)decrementNetworkActivityCount;
+- (void)decrementNetworkActivityCount
+#if TARGET_OS_TV
+__attribute__((unavailable("Not available on tvOS")));
+#else
+;
+#endif
 
 
 /// Returns YES in App Extension.

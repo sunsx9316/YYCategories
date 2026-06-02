@@ -186,6 +186,7 @@ YYSYNTH_DUMMY_CLASS(UIApplication_YYAdd)
     return tot_cpu;
 }
 
+#if !TARGET_OS_TV
 YYSYNTH_DYNAMIC_PROPERTY_OBJECT(networkActivityInfo, setNetworkActivityInfo, RETAIN_NONATOMIC, _YYUIApplicationNetworkIndicatorInfo *);
 
 - (void)_delaySetActivity:(NSTimer *)timer {
@@ -221,6 +222,7 @@ YYSYNTH_DYNAMIC_PROPERTY_OBJECT(networkActivityInfo, setNetworkActivityInfo, RET
 - (void)decrementNetworkActivityCount {
     [self _changeNetworkActivityCount:-1];
 }
+#endif
 
 + (BOOL)isAppExtension {
     static BOOL isAppExtension = NO;

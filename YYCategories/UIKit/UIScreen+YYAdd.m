@@ -37,6 +37,7 @@ YYSYNTH_DUMMY_CLASS(UIScreen_YYAdd);
     return screenScale;
 }
 
+#if !TARGET_OS_TV
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
 - (CGRect)currentBounds {
     return [self boundsForOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
@@ -45,7 +46,7 @@ YYSYNTH_DUMMY_CLASS(UIScreen_YYAdd);
 
 - (CGRect)boundsForOrientation:(UIInterfaceOrientation)orientation {
     CGRect bounds = [self bounds];
-    
+
     if (UIInterfaceOrientationIsLandscape(orientation)) {
         CGFloat buffer = bounds.size.width;
         bounds.size.width = bounds.size.height;
@@ -53,6 +54,7 @@ YYSYNTH_DUMMY_CLASS(UIScreen_YYAdd);
     }
     return bounds;
 }
+#endif
 
 - (CGSize)sizeInPixel {
     CGSize size = CGSizeZero;
