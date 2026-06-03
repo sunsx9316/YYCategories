@@ -12,9 +12,11 @@
 #import <Foundation/Foundation.h>
 
 #if TARGET_OS_IPHONE
-
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#else
+#import <Cocoa/Cocoa.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -81,13 +83,15 @@ static inline CGFloat CGAffineTransformGetTranslateY(CGAffineTransform transform
      p2 (transform->) q2
      p3 (transform->) q3
  This method returns the original transform matrix from these 3 pair of points.
- 
+
  @see http://stackoverflow.com/questions/13291796/calculate-values-for-a-cgaffinetransform-from-three-points-in-each-of-two-uiview
  */
 CGAffineTransform YYCGAffineTransformGetFromPoints(CGPoint before[_Nullable 3], CGPoint after[_Nullable 3]);
 
+#if TARGET_OS_IPHONE
 /// Get the transform which can converts a point from the coordinate system of a given view to another.
 CGAffineTransform YYCGAffineTransformGetFromViews(UIView *from, UIView *to);
+#endif
 
 /// Create a skew transform.
 static inline CGAffineTransform CGAffineTransformMakeSkew(CGFloat x, CGFloat y){
@@ -97,6 +101,7 @@ static inline CGAffineTransform CGAffineTransformMakeSkew(CGFloat x, CGFloat y){
     return transform;
 }
 
+#if TARGET_OS_IPHONE
 /// Negates/inverts a UIEdgeInsets.
 static inline UIEdgeInsets UIEdgeInsetsInvert(UIEdgeInsets insets) {
     return UIEdgeInsetsMake(-insets.top, -insets.left, -insets.bottom, -insets.right);
@@ -112,7 +117,7 @@ NSString *YYUIViewContentModeToCAGravity(UIViewContentMode contentMode);
 
 /**
  Returns a rectangle to fit the param rect with specified content mode.
- 
+
  @param rect The constrant rect
  @param size The content size
  @param mode The content mode
@@ -120,6 +125,7 @@ NSString *YYUIViewContentModeToCAGravity(UIViewContentMode contentMode);
  @discussion UIViewContentModeRedraw is same as UIViewContentModeScaleToFill.
  */
 CGRect YYCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMode mode);
+#endif
 
 /// Returns the center for the rectangle.
 static inline CGPoint CGRectGetCenter(CGRect rect) {
@@ -293,6 +299,7 @@ static inline CGRect CGRectPixelHalf(CGRect rect) {
 
 
 
+#if TARGET_OS_IPHONE
 /// floor UIEdgeInset for pixel-aligned
 static inline UIEdgeInsets UIEdgeInsetPixelFloor(UIEdgeInsets insets) {
     insets.top = CGFloatPixelFloor(insets.top);
@@ -310,6 +317,7 @@ static inline UIEdgeInsets UIEdgeInsetPixelCeil(UIEdgeInsets insets) {
     insets.right = CGFloatPixelCeil(insets.right);
     return insets;
 }
+#endif
 
 // main screen's scale
 #ifndef kScreenScale
@@ -332,5 +340,3 @@ static inline UIEdgeInsets UIEdgeInsetPixelCeil(UIEdgeInsets insets) {
 #endif
 
 NS_ASSUME_NONNULL_END
-
-#endif

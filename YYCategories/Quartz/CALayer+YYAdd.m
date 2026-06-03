@@ -9,10 +9,6 @@
 //  LICENSE file in the root directory of this source tree.
 //
 
-#import <Foundation/Foundation.h>
-
-#if TARGET_OS_IPHONE
-
 #import "CALayer+YYAdd.h"
 #import "YYCategoriesMacro.h"
 #import "YYCGUtilities.h"
@@ -22,6 +18,7 @@ YYSYNTH_DUMMY_CLASS(CALayer_YYAdd)
 
 @implementation CALayer (YYAdd)
 
+#if TARGET_OS_IPHONE
 - (UIImage *)snapshotImage {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.opaque, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -30,6 +27,7 @@ YYSYNTH_DUMMY_CLASS(CALayer_YYAdd)
     UIGraphicsEndImageContext();
     return image;
 }
+#endif
 
 - (NSData *)snapshotPDF {
     CGRect bounds = self.bounds;
@@ -48,6 +46,7 @@ YYSYNTH_DUMMY_CLASS(CALayer_YYAdd)
     return data;
 }
 
+#if TARGET_OS_IPHONE
 - (void)setLayerShadow:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius {
     self.shadowColor = color.CGColor;
     self.shadowOffset = offset;
@@ -56,6 +55,7 @@ YYSYNTH_DUMMY_CLASS(CALayer_YYAdd)
     self.shouldRasterize = YES;
     self.rasterizationScale = [UIScreen mainScreen].scale;
 }
+#endif
 
 - (void)removeAllSublayers {
     while (self.sublayers.count) {
@@ -284,6 +284,7 @@ YYSYNTH_DUMMY_CLASS(CALayer_YYAdd)
     self.transform = d;
 }
 
+#if TARGET_OS_IPHONE
 - (UIViewContentMode)contentMode {
     return YYCAGravityToUIViewContentMode(self.contentsGravity);
 }
@@ -321,10 +322,10 @@ YYSYNTH_DUMMY_CLASS(CALayer_YYAdd)
     [self addAnimation:transition forKey:@"yykit.fade"];
 }
 
+#endif
+
 - (void)removePreviousFadeAnimation {
     [self removeAnimationForKey:@"yykit.fade"];
 }
 
 @end
-
-#endif

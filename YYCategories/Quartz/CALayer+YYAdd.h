@@ -10,11 +10,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
 #if TARGET_OS_IPHONE
-
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,24 +23,28 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface CALayer (YYAdd)
 
+#if TARGET_OS_IPHONE
 /**
  Take snapshot without transform, image's size equals to bounds.
  */
 - (nullable UIImage *)snapshotImage;
+#endif
 
 /**
  Take snapshot without transform, PDF's page size equals to bounds.
  */
 - (nullable NSData *)snapshotPDF;
 
+#if TARGET_OS_IPHONE
 /**
  Shortcut to set the layer's shadow
- 
+
  @param color  Shadow Color
  @param offset Shadow offset
  @param radius Shadow radius
  */
 - (void)setLayerShadow:(UIColor*)color offset:(CGSize)offset radius:(CGFloat)radius;
+#endif
 
 /**
  Remove all sublayers.
@@ -78,6 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) CGFloat transformDepth;
 
+#if TARGET_OS_IPHONE
 /**
  Wrapper for `contentsGravity` property.
  */
@@ -85,11 +90,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Add a fade animation to layer's contents when the contents is changed.
- 
+
  @param duration Animation duration
  @param curve    Animation curve.
  */
 - (void)addFadeAnimationWithDuration:(NSTimeInterval)duration curve:(UIViewAnimationCurve)curve;
+#endif
 
 /**
  Cancel fade animation which is added with "-addFadeAnimationWithDuration:curve:".
@@ -99,5 +105,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

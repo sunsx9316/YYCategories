@@ -30,6 +30,8 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import <YYCategories/NSBundle+YYAdd.h>
 #import <YYCategories/NSThread+YYAdd.h>
 #import <YYCategories/YYColor+YYAdd.h>
+#import <YYCategories/CALayer+YYAdd.h>
+#import <YYCategories/YYCGUtilities.h>
 
 #if TARGET_OS_IPHONE
 #import <YYCategories/UIImage+YYAdd.h>
@@ -47,8 +49,6 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import <YYCategories/UIApplication+YYAdd.h>
 #import <YYCategories/UIFont+YYAdd.h>
 #import <YYCategories/UIBezierPath+YYAdd.h>
-#import <YYCategories/CALayer+YYAdd.h>
-#import <YYCategories/YYCGUtilities.h>
 #endif
 
 #else
@@ -69,6 +69,8 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "NSBundle+YYAdd.h"
 #import "NSThread+YYAdd.h"
 #import "YYColor+YYAdd.h"
+#import "CALayer+YYAdd.h"
+#import "YYCGUtilities.h"
 
 #if TARGET_OS_IPHONE
 #import "UIImage+YYAdd.h"
@@ -86,8 +88,6 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "UIApplication+YYAdd.h"
 #import "UIFont+YYAdd.h"
 #import "UIBezierPath+YYAdd.h"
-#import "CALayer+YYAdd.h"
-#import "YYCGUtilities.h"
 #endif
 
 #endif
