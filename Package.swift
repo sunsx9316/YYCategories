@@ -19,6 +19,7 @@ let package = Package(
             exclude: ["Foundation/NSObject+YYAddForARC.m", "Foundation/NSThread+YYAdd.m"],
             publicHeadersPath: "include",
             cSettings: [
+                .headerSearchPath("include", .when(platforms: [.iOS, .macOS, .tvOS])),
                 .headerSearchPath("Foundation", .when(platforms: [.iOS, .macOS, .tvOS])),
                 .headerSearchPath("Quartz", .when(platforms: [.iOS, .macOS, .tvOS])),
                 .headerSearchPath("UIKit", .when(platforms: [.iOS, .tvOS])),

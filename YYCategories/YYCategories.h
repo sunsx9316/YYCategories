@@ -11,47 +11,8 @@
 
 #import <Foundation/Foundation.h>
 
-#if __has_include(<YYCategories/YYCategories.h>)
 FOUNDATION_EXPORT double YYCategoriesVersionNumber;
 FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
-#import <YYCategories/YYCategoriesMacro.h>
-#import <YYCategories/NSObject+YYAdd.h>
-#import <YYCategories/NSObject+YYAddForKVO.h>
-#import <YYCategories/NSObject+YYAddForARC.h>
-#import <YYCategories/NSData+YYAdd.h>
-#import <YYCategories/NSString+YYAdd.h>
-#import <YYCategories/NSArray+YYAdd.h>
-#import <YYCategories/NSDictionary+YYAdd.h>
-#import <YYCategories/NSDate+YYAdd.h>
-#import <YYCategories/NSNumber+YYAdd.h>
-#import <YYCategories/NSNotificationCenter+YYAdd.h>
-#import <YYCategories/NSKeyedUnarchiver+YYAdd.h>
-#import <YYCategories/NSTimer+YYAdd.h>
-#import <YYCategories/NSBundle+YYAdd.h>
-#import <YYCategories/NSThread+YYAdd.h>
-#import <YYCategories/YYColor+YYAdd.h>
-#import <YYCategories/CALayer+YYAdd.h>
-#import <YYCategories/YYCGUtilities.h>
-
-#if TARGET_OS_IPHONE
-#import <YYCategories/UIImage+YYAdd.h>
-#import <YYCategories/UIControl+YYAdd.h>
-#if !TARGET_OS_TV
-#import <YYCategories/UIBarButtonItem+YYAdd.h>
-#endif
-#import <YYCategories/UIGestureRecognizer+YYAdd.h>
-#import <YYCategories/UIView+YYAdd.h>
-#import <YYCategories/UIScrollView+YYAdd.h>
-#import <YYCategories/UITableView+YYAdd.h>
-#import <YYCategories/UITextField+YYAdd.h>
-#import <YYCategories/UIScreen+YYAdd.h>
-#import <YYCategories/UIDevice+YYAdd.h>
-#import <YYCategories/UIApplication+YYAdd.h>
-#import <YYCategories/UIFont+YYAdd.h>
-#import <YYCategories/UIBezierPath+YYAdd.h>
-#endif
-
-#else
 
 #import "YYCategoriesMacro.h"
 #import "NSObject+YYAdd.h"
@@ -88,7 +49,5 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "UIApplication+YYAdd.h"
 #import "UIFont+YYAdd.h"
 #import "UIBezierPath+YYAdd.h"
-#endif
-
 #endif
 
