@@ -20,7 +20,7 @@ let package = Package(
             publicHeadersPath: "include",
             cSettings: [
                 .headerSearchPath("Foundation", .when(platforms: [.iOS, .macOS, .tvOS])),
-                .headerSearchPath("Quartz", .when(platforms: [.iOS, .tvOS])),
+                .headerSearchPath("Quartz", .when(platforms: [.iOS, .macOS, .tvOS])),
                 .headerSearchPath("UIKit", .when(platforms: [.iOS, .tvOS])),
                 .headerSearchPath("."),
             ],
